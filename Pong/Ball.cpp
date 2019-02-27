@@ -1,5 +1,6 @@
 #include "Ball.h"
 
+
 void Ball::init()
 {
 	w = h = 10;
@@ -32,7 +33,6 @@ Player::Side Ball::IsGoingTo()
 
 	return Player::Side_Left;
 }
-
 
 bool Ball::IsOutOfBounds()
 {

@@ -1,12 +1,12 @@
 #include "DebugPrinter.h"
 #include "bitmap.h"
-
 #include <windows.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+
 
 int RGBATOCOLOR(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
@@ -21,12 +21,10 @@ void COLORTORGBA(int col, unsigned char& r, unsigned char& g, unsigned char& b, 
 	a = (col & 0xff000000) >> 24;
 }
 
-
 int RGBTOCOLOR(unsigned char r, unsigned char g, unsigned char b)
 {
 	return RGBATOCOLOR(r, g, b, 255);
 }
-
 
 void DebugPrinter::Init(SDL_Renderer* renderer)
 {
@@ -65,13 +63,10 @@ void DebugPrinter::Init(SDL_Renderer* renderer)
 				pixels[((image.GetHeight() - 1 - y)*image.GetWidth()) + x] = RGBATOCOLOR(t[0], t[1], t[2], t[3]);
 			}
 		}
-
 		SDL_UnlockTexture(debugFont);
 	}
-
 	SetJustification(Justifiy_Left);
 	SetScale(1, 1);
-
 }
 
 void DebugPrinter::SetScale(float w, float h)
@@ -163,5 +158,4 @@ void DebugPrinter::Print(SDL_Renderer* renderer, int x, int y, int colour, char*
 			break;
 		}
 	}
-
 }

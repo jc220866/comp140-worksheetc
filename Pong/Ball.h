@@ -2,9 +2,11 @@
 #include "Object.h"
 #include "Player.h"
 
+
 class Ball : public Object
 {
 public:
+
 	void virtual init();
 	void virtual Move();
 	
@@ -14,6 +16,8 @@ public:
 	Player::Side IsGoingTo();
 
 	void ServeTo(Player::Side serveTo);
+
 private:
+
 	float dx,dy;
 };

@@ -22,6 +22,7 @@ public:
 	void Release();
 
 private:
+
 	void Reset();
 	void Assign(const Bitmap& src);
 
@@ -31,4 +32,3 @@ private:
 	unsigned int Width;
 	unsigned int Height;
 };
-

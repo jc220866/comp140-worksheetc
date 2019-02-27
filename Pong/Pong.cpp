@@ -1,6 +1,7 @@
 #include "Pong.h"
 #include <stdio.h>
 
+
 bool Pong::Init(SDL_Renderer *renderer)
 {
 	ThePlayers[0].init();
@@ -88,7 +89,6 @@ bool Pong::Draw(SDL_Renderer *renderer)
 		debugPrinter->Print(renderer, 400,20,RGBTOCOLOR(255,255,255),str);
 		debugPrinter->SetScale(1, 1);
 		debugPrinter->SetJustification(DebugPrinter::Justifiy_Left);
-		
 	
 	return true;
 }
@@ -97,8 +97,6 @@ bool Pong::Shutdown()
 {
 	return true;
 }
-
-
 
 void Pong::DrawCourt(SDL_Renderer *renderer)
 {	
@@ -124,5 +122,4 @@ void Pong::DrawCourt(SDL_Renderer *renderer)
 	rect.h = 600;
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderFillRect(renderer, &rect);
-
 }

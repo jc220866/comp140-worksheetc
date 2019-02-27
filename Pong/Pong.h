@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "DebugPrinter.h"
 
+
 class Pong
 {
 	private:
@@ -11,6 +12,7 @@ class Pong
 		Ball TheBall;
 
 		void DrawCourt(SDL_Renderer* renderer);
+
 	public:
 		
 		int Score[2];
@@ -21,4 +23,4 @@ class Pong
 
 		DebugPrinter* debugPrinter;
 
-	};
+};

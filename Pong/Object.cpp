@@ -1,6 +1,7 @@
 #include "Object.h"
 #include <SDL.h>
 
+
 bool Object::IsColliding(const Object& o)
 {
 	if((posX + w) < o.posX) return false;
@@ -23,5 +24,4 @@ void Object::Render(SDL_Renderer* renderer)
 
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderFillRect(renderer, &rect);
-
 }

@@ -1,6 +1,7 @@
 #include "bitmap.h"
 #include <windows.h>
 
+
 Bitmap::Bitmap()
 {
 	Reset();

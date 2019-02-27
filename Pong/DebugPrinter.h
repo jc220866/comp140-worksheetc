@@ -9,6 +9,7 @@ void COLORTORGBA(int col, unsigned char& r, unsigned char& g, unsigned char& b, 
 class DebugPrinter
 {
 public:
+
 	void Init(SDL_Renderer* renderer);
 	void SetScale(float w, float h);
 
@@ -16,9 +17,8 @@ public:
 	void SetJustification(Justification just);
 	void Print(SDL_Renderer* renderer,int x, int y, int colour, char* fmt, ...);
 
-	
-
 private:
+
 	int calculateOffset(const char *buffer);
 
 	SDL_Texture*    debugFont;

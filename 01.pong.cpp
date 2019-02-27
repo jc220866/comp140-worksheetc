@@ -2,11 +2,8 @@
 //Should work on iOS/Android/Mac/Windows/Linux
 
 #include <SDL.h>
-#undef  main
-
 #include <stdlib.h> //rand()
 #include "timer.h"
-
 #include "Pong/Pong.h"
 #include <list>
 
@@ -19,10 +16,11 @@ SDL_Renderer *renderer = NULL;
 #pragma comment(lib, "SDL2.lib")
 
 #define ARRAY_LENGTH(x) (sizeof(x) / sizeof(x[0]))
+#undef  main
+
 
 int SDLCALL watch(void *userdata, SDL_Event* event)
 {
-
 	if (event->type == SDL_APP_WILLENTERBACKGROUND)
 	{
 		quitting = true;
@@ -32,7 +30,6 @@ int SDLCALL watch(void *userdata, SDL_Event* event)
 }
 
 int main(int argc, char *argv[]) {
-
 
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0)
 	{
@@ -84,7 +81,6 @@ int main(int argc, char *argv[]) {
 				
 				frameTimer.Stop();
 				elaspedTime = frameTimer.GetmS();
-				
 
 				if (elaspedTime < 17)
 				{
@@ -116,11 +112,7 @@ int main(int argc, char *argv[]) {
 		default:
 			throw "Unhandled state";
 			break;
-
 	}
-
-
-	
 	SDL_DelEventWatch(watch, NULL);
 	SDL_DestroyWindow(window);
 	SDL_Quit();

@@ -1,9 +1,11 @@
 #pragma once
 #include "Object.h"
 
+
 class Player : public Object
 {
 public:
+
 	void virtual init();
 	void virtual Move();
 	
@@ -11,6 +13,7 @@ public:
 	void SetSide(Side eSide);
 
 private:
+
 	Side mySide;
 	int speed;
 };
