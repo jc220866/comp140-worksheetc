@@ -9,6 +9,7 @@
 class SerialInterface
 {
 public:
+
 	SerialInterface();
 	~SerialInterface();
 
@@ -16,16 +17,14 @@ public:
 
 	void send(std::string msg);
 	void getPositions();
-	void getButton();
 
 	int getPot1() { return pot1; };
 	int getPot2() { return pot2; };
 
 	void close(); 
 
-
-
 private:
+
 	serial::Serial* mySerial;
 
 	int pot1 = 0;

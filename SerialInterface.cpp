@@ -43,25 +43,6 @@ void SerialInterface::send(std::string msg)
 	}
 }
 
-void SerialInterface::getButton()
-{
-	if (connect)
-	{
-		mySerial->write("B");
-
-		std::string result = mySerial->readline();
-
-		//std::vector<std::string> pos = split(result, ';');
-
-		std::string b1 = result.substr(0, 1);
-		std::string b2 = result.substr(2, 1);
-
-		button1 = std::stoi(b1);
-		button2 = std::stoi(b2);
-		//std::cout << button1 << std::endl;
-	}
-}
-
 void SerialInterface::getPositions()
 {
 	if (connect)
@@ -70,17 +51,14 @@ void SerialInterface::getPositions()
 
 		std::string result = mySerial->readline();
 
-		// std::cout << "Vakues: " << result << "\n";  // uncomment to see the values in console 
-
-		if (result.length() > 5) {
+		if (result.length() > 5) 
+		{
 			std::string sub1 = result.substr(0, 4);
 			pot1 = std::stoi(sub1);
-
 
 			std::string sub2 = result.substr(5, 9);
 			pot2 = std::stoi(sub2);
 		}
-
 	}
 }
 
