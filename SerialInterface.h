@@ -29,6 +29,4 @@ private:
 
 	int pot1 = 0;
 	int pot2 = 0;
-	int button1;
-	int button2;
 };
