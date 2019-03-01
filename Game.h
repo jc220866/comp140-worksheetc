@@ -6,6 +6,7 @@
 class Game
 {
 public:
+
 	Game();
 	~Game();
 
@@ -19,6 +20,7 @@ public:
 	bool running() { return isRunning; };
 
 private:
+
 	SDL_Window* mainWindow;
 	SDL_Renderer* mainRenderer;
 	SerialInterface* serial;
