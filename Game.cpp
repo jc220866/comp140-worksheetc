@@ -117,27 +117,24 @@ void Game::handleEvents()
 {
 	SDL_Event event;
 
-	if (SDL_PollEvent(&event)) {
-		switch (event.type) {
+	if (SDL_PollEvent(&event)) 
+	{
+		switch (event.type) 
+		{
 		case SDL_QUIT:
 			isRunning = false;
 			break;
-		case SDL_MOUSEBUTTONDOWN:
-			break;
+
 		case SDL_KEYDOWN:
-			if (event.key.keysym.sym == SDLK_w)
+			if (event.key.keysym.sym == SDLK_ESCAPE)
 			{
-				playerPosition.y -= 5.0f;
-			}
-			else if (event.key.keysym.sym == SDLK_s)
-			{
-				playerPosition.y += 5.0f;
+				isRunning = false;
 			}
 			break;
+
 		default:
 			break;
 		}
-
 	}
 }
 

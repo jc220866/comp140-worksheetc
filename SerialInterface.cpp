@@ -14,7 +14,8 @@ SerialInterface::SerialInterface()
 		serial::PortInfo device = *iter++;
 		std::string port = device.port.c_str();
 
-		try {
+		try 
+		{
 			mySerial = new serial::Serial(port, 9600, serial::Timeout::simpleTimeout(15));
 
 			if (mySerial->isOpen())
@@ -25,14 +26,13 @@ SerialInterface::SerialInterface()
 				break;
 			}
 		}
-		catch (std::exception &e) {
-
+		catch (std::exception &e) 
+		{
 		}
 	}
 }
 SerialInterface::~SerialInterface()
 {
-
 }
 
 void SerialInterface::send(std::string msg)
